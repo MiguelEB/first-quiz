@@ -44,7 +44,7 @@ Where a.age > p.age;
 # Write SQL to select the pets that are owned by Bessie and nobody else.
 # The output should be a list of tuples in the format: (<person name>, <pet name>, <species>)
 sql_only_owned_by_bessie = """ 
-SELECT "("+pe.name+", "+a.name+", "+a.species+")"
+SELECT pe.name, a.name, a.species
 from people AS pe inner join people_animals AS pa ON pe.person_id = pa.owner_id
 inner join animals AS a ON a.animal_id = pa.pet_id
 where pe.name = "bessie"
